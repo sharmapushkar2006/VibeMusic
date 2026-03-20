@@ -14,7 +14,10 @@ const backbtn = document.getElementById("back-btn");
 const musicposter = document.getElementById("music-poster");
 const musicname = document.getElementById("music-name");
 const artistname = document.getElementById("artist-name");
-
+const nextbtn = document.getElementById("next");
+nextbtn.addEventListener("click", function() {
+    fetchMusic();
+});
 backbtn.addEventListener("click", function() {
     moodWindow.classList.remove("hidden");
     feedWindow.classList.add("hidden");
