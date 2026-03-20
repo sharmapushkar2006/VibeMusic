@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> VibeMusic | Pushkar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script type="module" src="js/app.js"></script>
+    <!--Audio loader-->
+    <audio id="audio-player" controls class="hidden"loop></audio>
+    <!--Top Bar -->
+    <div class="top-bar">
+        <b>VibeMusic By Pushkar</b>
+    </div>
+
+    <!--Mood Selection Screen-->
+    <section id="mood-screen" class="overlay">
+        <div class="mood-content">
+            <h1>Bhai, kaisa mood hai?</h1>
+            <p>Let you's mood choose the perfect tracks for you!</p>
+            
+            <div class="mood-grid">
+                <button class="mood-btn" id="hindi-btn">🇮🇳 Hindi Hits</button>
+                <button class="mood-btn" id="punjabi-btn">🚜 Punjabi Swag</button>
+                <button class="mood-btn" id="haryanvi-btn">🚜 Haryanvi Swag</button>
+               <!--<button class="mood-btn" id="lofi-btn">💻 Focus / Lofi</button>-->
+               <button class="mood-btn">More Coming soon..</button>
+            </div>
+            
+        </div>
+    </section>
+
+    <!--Feed Screen-->
+    <main id="app-feed" class="app-container hidden">
+        
+        <button id="back-btn"class="back-btn">← Change Mood</button>
+        <img class="musicposter" id="music-poster" src="assets/images/covers/loading.gif" alt="Music Poster">
+        <div id="feed-wrapper"class="feed-wrapper">
+            <b id="music-name">Loading..</b>
+            <br>
+            <p id="artist-name">Loading...</p>
+        </div>
+        <button style="background-color:yellow;color:black;position:fixed;border-radius:50%;width:80px;height:50px; bottom: 50px; right: 20px;" id="next">&#8595;</button>
+    </main>
+
+    
+    
+
+</body>
+</html>

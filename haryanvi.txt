@@ -1,0 +1,10 @@
+| Original Song Name | File Name          |
+| ------------------ | ------------------ |
+| Bairan             | bairan.mp3         |
+| Convoy             | convoy.mp3         |
+| Gypsy              | gypsy.mp3          |
+| Naam Chale         | naamchale.mp3      |
+| Parna              | parna.mp3          |
+| System Pe System   | systempesystem.mp3 |
+| Tagdi              | tagdi.mp3          |
+| Warning            | warning.mp3        |
