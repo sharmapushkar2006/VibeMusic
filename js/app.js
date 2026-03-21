@@ -44,10 +44,6 @@ hary.addEventListener("click", function() {
     mood = "haryanvi";
     setupApp();
 });
-lofi.addEventListener("click", function() {
-    mood = "lofi";
-    setupApp();
-});
 
 function setupApp() {
     moodWindow.classList.add("hidden");
