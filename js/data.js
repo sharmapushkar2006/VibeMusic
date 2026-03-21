@@ -95,7 +95,7 @@ export const musicLibrary = [
     artist: "Arijit Singh",
     tags: ["hindi", "romantic"],
     src: "assets/audio/hindi/Kesariya.mp3",
-    cover: "assets/images/covers/Kesariya.jpg",
+    cover: "assets/images/covers/kesariya.jpg",
     spotifyLink: "https://open.spotify.com/"
 },
 {
