@@ -1,7 +1,7 @@
 import { musicLibrary } from './data.js';
 console.log("script loaded successfully!");
 if(screen.width>400){
-    alert('App Not supported on this software');
+    alert('Website made only for smartphones, Kindly use dev tools.');
 }
 var mood, select_id;
 
