@@ -1,6 +1,8 @@
 import { musicLibrary } from './data.js';
 console.log("script loaded successfully!");
-
+if(screen.width>400){
+    alert('App Not supported on this software');
+}
 var mood, select_id;
 
 const moodWindow = document.getElementById("mood-screen");
@@ -55,21 +57,23 @@ function setupApp() {
 
 function fetchMusic() {
     getRandomInt(62); 
-    const selectedSong = musicLibrary.find(song => song.id === select_id);
-
+    const selectedSong = musicLibrary.find(function(song) {
+        if (song.id === select_id) {
+            return true;
+        } else {
+            return false;
+        }
+    });
     if (selectedSong && selectedSong.tags.includes(mood)) {
-        musicposter.src = selectedSong.cover; // data.js mein 'cover' hai, 'poster' nahi
-        musicname.textContent = selectedSong.title; // data.js mein 'title' hai, 'name' nahi
+        musicposter.src = selectedSong.cover; 
+        musicname.textContent = selectedSong.title; 
         artistname.textContent = selectedSong.artist;
-        player.src = selectedSong.src;
-        player.play();
-        console.log("Found matching song:", selectedSong.title);
+        console.log("Match Found: " + selectedSong.title);
     } else {
-        console.log("Mood mismatch for ID:", select_id, ". Retrying...");
+        console.log("Mood mismatch for ID " + select_id + ". Trying again...");
         fetchMusic(); 
     }
 }
-
 function getRandomInt(max) {
     select_id = Math.floor(Math.random() * max) + 1;
 }
