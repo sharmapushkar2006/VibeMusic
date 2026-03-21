@@ -64,6 +64,8 @@ function fetchMusic() {
         musicposter.src = selectedSong.cover; 
         musicname.textContent = selectedSong.title; 
         artistname.textContent = selectedSong.artist;
+        player.src=selectedSong.src;
+        player.play();
         console.log("Match Found: " + selectedSong.title);
     } else {
         console.log("Mood mismatch for ID " + select_id + ". Trying again...");
