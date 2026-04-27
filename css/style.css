@@ -1,54 +1,19 @@
-/* App will be using Neo Brutalism theme */
+/* VibeMusic - Modern Neo-Brutalism Theme */
 :root {
-    --bg-color: #A3E635; /* Bright Neon Green */
-    --card-bg: #FFFFFF;
-    --text-color: #000000;
+    --bg-color: rgb(44, 28, 34);      /* Dark Plum */
+    --card-bg: rgb(215, 196, 182);   /* Soft Cream */
+    --text-color: rgb(44, 28, 34);    /* Dark text for contrast */
+    --accent-color: #ffffff;          /* Pure white for highlights */
     --border-size: 3px;
-    --shadow-offset: 5px;
-    --accent-color: #FACC15; /* Bright Yellow */
+    --shadow-offset: 6px;
+    --border-color: #000000;          /* Sharp black borders for Neo-Brutalism */
 }
-.musicposter{
-    position:relative;
-    left:10%;
-    margin-top:20%;
-    border-radius:5px;
-    box-shadow: #fff 0px 0px 0px, aqua 3px 3px 0px;
-    width: 80%;
-    height: 40%;
-    object-fit: cover;
-}
-.feed-wrapper{
-    margin-top:10%;
-    color:black;
-    text-align:center;
-}
-.back-btn{
-    position: fixed;
-    top: 7%;
-    left: 10px;
-    padding: 10px 15px;
-    background: #fff;
-    border: var(--border-size) solid #000;
-    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #000;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.1s;
-}
-.top-bar{
-    width: 100%;
-    position:fixed;
-    top:0px;
-    left:0px;
-    background:#A3E635; 
-    color: black;
-    padding: 10px 10px 10px 10px;
-    border-bottom: var(--border-size) solid #000;
-}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial Black', sans-serif; /* Bold font for Neo-Brutalism */
+    font-family: 'Arial Black', sans-serif;
 }
 
 body {
@@ -57,33 +22,74 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: var(--text-color);
+    color: var(--card-bg); /* Soft cream text on dark bg */
 }
+
+/* App Container */
 .app-container {
     width: 100%;
+    max-width: 400px; /* Mobile-first approach */
     height: 90vh;
-    background:yellow;
-    color:black;
-    border: var(--border-size) solid #000;
-    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #000;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: var(--border-size) solid var(--border-color);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--border-color);
     position: relative;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
 }
+
+.app-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Top Bar */
+.top-bar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--card-bg); 
+    color: var(--text-color);
+    padding: 15px;
+    border-bottom: var(--border-size) solid var(--border-color);
+    z-index: 1000;
+}
+
+/* Buttons */
+.back-btn {
+    position: fixed;
+    top: 7%;
+    left: 10px;
+    padding: 10px 15px;
+    background: var(--card-bg);
+    border: var(--border-size) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--border-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.1s;
+    z-index: 1001;
+}
+
+.back-btn:active, .mood-btn:active {
+    box-shadow: 0px 0px 0px var(--border-color);
+    transform: translate(4px, 4px);
+}
+
+/* Overlay / Mood Selection */
 .overlay {
     position: fixed;
     width: 100%;
     max-width: 400px;
     height: 90vh;
-    background: var(--accent-color);
+    background: var(--bg-color);
     z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: var(--border-size) solid #000;
-    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px #000;
+    border: var(--border-size) solid var(--border-color);
     padding: 20px;
     text-align: center;
 }
@@ -94,20 +100,19 @@ body {
     gap: 15px;
     margin-top: 30px;
 }
+
 .mood-btn {
     padding: 15px;
-    background: #fff;
-    border: var(--border-size) solid #000;
-    box-shadow: 3px 3px 0px #000;
+    background: var(--card-bg);
+    border: var(--border-size) solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--border-color);
     font-weight: bold;
+    color: var(--text-color);
     cursor: pointer;
     transition: 0.1s;
 }
 
-.mood-btn:active {
-    box-shadow: 0px 0px 0px #000;
-    transform: translate(3px, 3px);
-}
+/* Music Card & Feed */
 .music-card {
     height: 100%;
     width: 100%;
@@ -120,7 +125,19 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(20%); /* Thoda raw look dene ke liye */
+    filter: sepia(20%) contrast(110%); /* Creamy vibe match karne ke liye */
+}
+
+.musicposter {
+    position: relative;
+    left: 10%;
+    margin-top: 20%;
+    border: var(--border-size) solid var(--border-color);
+    border-radius: 0px; /* Neo-Brutalism prefers sharp corners */
+    box-shadow: var(--card-bg) 5px 5px 0px;
+    width: 80%;
+    height: 45%;
+    object-fit: cover;
 }
 
 .song-info {
@@ -128,10 +145,17 @@ body {
     bottom: 40px;
     left: 15px;
     right: 15px;
-    background: #fff;
-    border: var(--border-size) solid #000;
-    padding: 15px;
-    box-shadow: 5px 5px 0px #000;
+    background: var(--card-bg);
+    border: var(--border-size) solid var(--border-color);
+    padding: 20px;
+    box-shadow: 8px 8px 0px var(--border-color);
+    color: var(--text-color);
+}
+
+.feed-wrapper {
+    margin-top: 15%;
+    color: var(--card-bg);
+    text-align: center;
 }
 
 .hidden {
