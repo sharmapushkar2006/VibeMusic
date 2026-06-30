@@ -156,9 +156,12 @@ body {
 .arrow{
     background:url("https://sharmapushkar2006.github.io/VibeMusic/assets/images/toolkit/arrow.jpg");
     background-size:cover;
+    position:fixed;
+    bottom:5%;
+    right:3%;
     border-radius:50%;
-    width:90px;
-    height:90px;
+    width:70px;
+    height:70px;
 }
 .hidden {
     display: none !important;
