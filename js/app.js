@@ -1,7 +1,7 @@
 import { musicLibrary } from './data.js';
 console.log("script loaded successfully!");
 if(screen.width>400){
-    alert('Website made only for smartphones, Kindly use dev tools.');
+    console.log("Device is not Mobile phone");
 }
 var mood, select_id;
 
